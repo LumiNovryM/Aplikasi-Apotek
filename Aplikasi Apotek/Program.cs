@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 // My DbContext
 builder.Services.AddDbContext<ApotekContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("SQLServer"))

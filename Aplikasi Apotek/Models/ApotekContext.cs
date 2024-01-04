@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using System.Numerics;
+using System.Reflection.Emit;
 
 namespace Aplikasi_Apotek.Models
 {
@@ -19,6 +20,7 @@ namespace Aplikasi_Apotek.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
+            // Conterter Code
             var converter = new ValueConverter<BigInteger, long>(
                 model => (long)model,
                 provider => new BigInteger(provider));
