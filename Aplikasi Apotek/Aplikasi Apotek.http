@@ -1,0 +1,6 @@
+@Aplikasi_Apotek_HostAddress = http://localhost:5193
+
+GET {{Aplikasi_Apotek_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
