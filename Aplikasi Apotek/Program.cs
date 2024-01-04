@@ -1,9 +1,14 @@
+using Aplikasi_Apotek.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 // My DbContext
-builder.Services.AddDbContext<>
+builder.Services.AddDbContext<ApotekContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("SQLServer"))
+);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
