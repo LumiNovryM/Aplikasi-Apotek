@@ -18,7 +18,8 @@ namespace Aplikasi_Apotek.Models
         public string Aktivitas { get; set; }
 
         [Required]
+        public int Id_user { get; set; }
         [ForeignKey("Id_user")]
-        public User user { get; set; }
+        public virtual User Users { get; set; }
     }
 }

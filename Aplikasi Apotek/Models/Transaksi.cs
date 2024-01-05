@@ -29,7 +29,7 @@ namespace Aplikasi_Apotek.Models
         [Required]
         public int Id_barang { get; set; }
         [ForeignKey("Id_barang")]
-        public virtual Barang Barang { get; set; }
+        public virtual Barang Barangs { get; set; }
 
 
     }
