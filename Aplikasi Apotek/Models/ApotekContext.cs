@@ -90,6 +90,76 @@ namespace Aplikasi_Apotek.Models
                     }
                 );
 
+            // Transaksi
+            // One To Many (Invers) / Transaksi Belongs To User
+            modelBuilder.Entity<Transaksi>()
+                .HasOne(e => e.Users);
+
+            // One To Many (Invers) / Transaksi Belongs To Barang
+            modelBuilder.Entity<Transaksi>()
+                .HasOne(e => e.Barangs);
+
+            modelBuilder.Entity<Transaksi>()
+                .HasData(
+                    new Transaksi
+                    {
+                        Id_transaksi = 1,
+                        No_transaksi = "001",
+                        Tgl_transaksi = DateTime.Now,
+                        Total_bayar = 25000,
+                        Id_user = 1,
+                        Id_barang = 3,
+                    },
+                    new Transaksi
+                    {
+                        Id_transaksi = 2,
+                        No_transaksi = "002",
+                        Tgl_transaksi = DateTime.Now,
+                        Total_bayar = 25000,
+                        Id_user = 1,
+                        Id_barang = 3,
+                    },
+                    new Transaksi
+                    {
+                        Id_transaksi = 3,
+                        No_transaksi = "003",
+                        Tgl_transaksi = DateTime.Now,
+                        Total_bayar = 25000,
+                        Id_user = 1,
+                        Id_barang = 3,
+                    }
+                );
+
+            // Log
+            // One To Many (Invers) / Log Belongs To User
+            modelBuilder.Entity<Log>()
+                .HasOne(e => e.Users);
+
+            modelBuilder.Entity<Log>()
+                .HasData(
+                    new Log
+                    {
+                        Id_log = 1,
+                        Waktu = DateTime.Now,
+                        Aktivitas = "Barang Terjual",
+                        Id_user = 1,
+                    },
+                    new Log
+                    {
+                        Id_log = 2,
+                        Waktu = DateTime.Now,
+                        Aktivitas = "Barang Terjual",
+                        Id_user  = 1
+                    },
+                    new Log
+                    {
+                        Id_log = 3,
+                        Waktu = DateTime.Now,
+                        Aktivitas = "Barang Terjual",
+                        Id_user = 1
+                    }
+                );
+
             // Conterter Code
             var converter = new ValueConverter<BigInteger, long>(
                 model => (long)model,
