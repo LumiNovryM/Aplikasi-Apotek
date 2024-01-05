@@ -26,5 +26,86 @@ namespace Aplikasi_Apotek.Controllers
             }
             return await _apotekContext.User.ToListAsync();
         }
+
+        // Get User Data By Id
+        [HttpGet("{id}")]
+        public async Task<ActionResult<User>> GetUserById(int id)
+        {
+            if( _apotekContext.User == null)
+            {
+                return NotFound();
+            }
+
+            var user = await _apotekContext.User.FindAsync(id);
+            if(user == null)
+            {
+                return NotFound();
+            }
+            return user;
+        }
+
+        // Create New User
+        [HttpPost]
+        public async Task<ActionResult<User>> CreateNewUser(User user)
+        {
+            _apotekContext.User.Add(user);
+            await _apotekContext.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetUser), new { id = user.Id_user }, user);
+        }
+
+        // Check
+        private bool BrandAvailable(int id)
+        {
+            return (_apotekContext.User?.Any(x => x.Id_user == id)).GetValueOrDefault();
+        }
+
+        // Edit Existing User
+        [HttpPut]
+        public async Task<ActionResult> EditUser(int id, User user)
+        {
+            if (id != user.Id_user)
+            {
+                return BadRequest();
+            }
+            _apotekContext.Entry(user).State = EntityState.Modified;
+            try
+            {
+                await _apotekContext.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!BrandAvailable(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+            return Ok();
+        }
+
+        // Delete User
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteUser(int id)
+        {
+            if (_apotekContext.User == null)
+            {
+                return NotFound();
+            }
+            var user = await _apotekContext.User.FindAsync(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            _apotekContext.User.Remove(user);
+
+            await _apotekContext.SaveChangesAsync();
+
+            return Ok();
+        }
     }
 }
