@@ -57,6 +57,38 @@ namespace Aplikasi_Apotek.Migrations
                     b.HasKey("Id_barang");
 
                     b.ToTable("Barang");
+
+                    b.HasData(
+                        new
+                        {
+                            Id_barang = 1,
+                            Expired_date = new DateTime(2024, 1, 5, 22, 54, 46, 438, DateTimeKind.Local).AddTicks(9327),
+                            Harga_Satuan = 75000L,
+                            Jumlah_barang = 100L,
+                            Kode_barang = "OBT",
+                            Nama_barang = "Obat Tidur",
+                            Satuan = "Pcs"
+                        },
+                        new
+                        {
+                            Id_barang = 2,
+                            Expired_date = new DateTime(2024, 1, 5, 22, 54, 46, 438, DateTimeKind.Local).AddTicks(9354),
+                            Harga_Satuan = 5000L,
+                            Jumlah_barang = 50L,
+                            Kode_barang = "OBT",
+                            Nama_barang = "Obat Maag",
+                            Satuan = "Pcs"
+                        },
+                        new
+                        {
+                            Id_barang = 3,
+                            Expired_date = new DateTime(2024, 1, 5, 22, 54, 46, 438, DateTimeKind.Local).AddTicks(9358),
+                            Harga_Satuan = 25000L,
+                            Jumlah_barang = 15L,
+                            Kode_barang = "OBT",
+                            Nama_barang = "Obat Pilek",
+                            Satuan = "Pcs"
+                        });
                 });
 
             modelBuilder.Entity("Aplikasi_Apotek.Models.Log", b =>
@@ -159,6 +191,35 @@ namespace Aplikasi_Apotek.Migrations
                     b.HasKey("Id_user");
 
                     b.ToTable("User");
+
+                    b.HasData(
+                        new
+                        {
+                            Id_user = 1,
+                            Alamat = "JL Delima 1",
+                            Nama = "Lumi",
+                            Telpon = "081288531636",
+                            Tipe_user = "Admin",
+                            Username = "lumi07"
+                        },
+                        new
+                        {
+                            Id_user = 2,
+                            Alamat = "JL Mangga 1",
+                            Nama = "Novry",
+                            Telpon = "081244542479",
+                            Tipe_user = "Kasir",
+                            Username = "novry11"
+                        },
+                        new
+                        {
+                            Id_user = 3,
+                            Alamat = "JL Apel 1",
+                            Nama = "Mekel",
+                            Telpon = "089524790987",
+                            Tipe_user = "Kasir",
+                            Username = "mekel2005"
+                        });
                 });
 
             modelBuilder.Entity("Aplikasi_Apotek.Models.Log", b =>
@@ -180,7 +241,7 @@ namespace Aplikasi_Apotek.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Aplikasi_Apotek.Models.User", "User")
+                    b.HasOne("Aplikasi_Apotek.Models.User", "Users")
                         .WithMany()
                         .HasForeignKey("Id_user")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -188,7 +249,7 @@ namespace Aplikasi_Apotek.Migrations
 
                     b.Navigation("Barang");
 
-                    b.Navigation("User");
+                    b.Navigation("Users");
                 });
 #pragma warning restore 612, 618
         }

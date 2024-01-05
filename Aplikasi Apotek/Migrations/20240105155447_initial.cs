@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace Aplikasi_Apotek.Migrations
 {
     /// <inheritdoc />
@@ -95,6 +97,26 @@ namespace Aplikasi_Apotek.Migrations
                         principalTable: "User",
                         principalColumn: "Id_user",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Barang",
+                columns: new[] { "Id_barang", "Expired_date", "Harga_Satuan", "Jumlah_barang", "Kode_barang", "Nama_barang", "Satuan" },
+                values: new object[,]
+                {
+                    { 1, new DateTime(2024, 1, 5, 22, 54, 46, 438, DateTimeKind.Local).AddTicks(9327), 75000L, 100L, "OBT", "Obat Tidur", "Pcs" },
+                    { 2, new DateTime(2024, 1, 5, 22, 54, 46, 438, DateTimeKind.Local).AddTicks(9354), 5000L, 50L, "OBT", "Obat Maag", "Pcs" },
+                    { 3, new DateTime(2024, 1, 5, 22, 54, 46, 438, DateTimeKind.Local).AddTicks(9358), 25000L, 15L, "OBT", "Obat Pilek", "Pcs" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "User",
+                columns: new[] { "Id_user", "Alamat", "Nama", "Password", "Telpon", "Tipe_user", "Username" },
+                values: new object[,]
+                {
+                    { 1, "JL Delima 1", "Lumi", null, "081288531636", "Admin", "lumi07" },
+                    { 2, "JL Mangga 1", "Novry", null, "081244542479", "Kasir", "novry11" },
+                    { 3, "JL Apel 1", "Mekel", null, "089524790987", "Kasir", "mekel2005" }
                 });
 
             migrationBuilder.CreateIndex(

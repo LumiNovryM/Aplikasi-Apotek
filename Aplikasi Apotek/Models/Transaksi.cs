@@ -22,12 +22,15 @@ namespace Aplikasi_Apotek.Models
         public BigInteger Total_bayar { get; set; }
 
         [Required]
+        public int Id_user { get; set; }
         [ForeignKey("Id_user")]
-        public User User { get; set; }
+        public virtual User Users { get; set; }
 
         [Required]
+        public int Id_barang { get; set; }
         [ForeignKey("Id_barang")]
-        public Barang Barang { get; set; }
+        public virtual Barang Barang { get; set; }
+
 
     }
 }
