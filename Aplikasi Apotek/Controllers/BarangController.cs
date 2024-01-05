@@ -7,75 +7,75 @@ namespace Aplikasi_Apotek.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserController : ControllerBase
+    public class BarangController : ControllerBase
     {
         private readonly ApotekContext _apotekContext;
 
-        public UserController(ApotekContext apotekContext)
+        public BarangController(ApotekContext apotekContext)
         {
             _apotekContext = apotekContext;
         }
 
         // Get All User Data
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<User>>> GetUser()
+        public async Task<ActionResult<IEnumerable<Barang>>> GetBarang()
         {
-            if(_apotekContext.User == null)
+            if (_apotekContext.Barang == null)
             {
                 return NotFound();
             }
-            return await _apotekContext.User.ToListAsync();
+            return await _apotekContext.Barang.ToListAsync();
         }
 
         // Get User Data By Id
         [HttpGet("{id}")]
-        public async Task<ActionResult<User>> GetUserById(int id)
+        public async Task<ActionResult<Barang>> GetBarangById(int id)
         {
-            if( _apotekContext.User == null)
+            if (_apotekContext.Barang == null)
             {
                 return NotFound();
             }
 
-            var user = await _apotekContext.User.FindAsync(id);
-            if(user == null)
+            var barang = await _apotekContext.Barang.FindAsync(id);
+            if (barang == null)
             {
                 return NotFound();
             }
-            return user;
+            return barang;
         }
 
         // Create New User
         [HttpPost]
-        public async Task<ActionResult<User>> CreateNewUser(User user)
+        public async Task<ActionResult<Barang>> CreateNewBarang(Barang barang)
         {
-            _apotekContext.User.Add(user);
+            _apotekContext.Barang.Add(barang);
             await _apotekContext.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetUser), new { id = user.Id_user }, user);
+            return CreatedAtAction(nameof(GetBarang), new { id = barang.Id_barang }, barang);
         }
 
         // Check
-        private bool UserAvailable(int id)
+        private bool BarangAvailable(int id)
         {
-            return (_apotekContext.User?.Any(x => x.Id_user == id)).GetValueOrDefault();
+            return (_apotekContext.Barang?.Any(x => x.Id_barang == id)).GetValueOrDefault();
         }
 
         // Edit Existing User
         [HttpPut]
-        public async Task<ActionResult> EditUser(int id, User user)
+        public async Task<ActionResult> EditBarang(int id, Barang barang)
         {
-            if (id != user.Id_user)
+            if (id != barang.Id_barang)
             {
                 return BadRequest();
             }
-            _apotekContext.Entry(user).State = EntityState.Modified;
+            _apotekContext.Entry(barang).State = EntityState.Modified;
             try
             {
                 await _apotekContext.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!BrandAvailable(id))
+                if (!BarangAvailable(id))
                 {
                     return NotFound();
                 }
@@ -89,19 +89,19 @@ namespace Aplikasi_Apotek.Controllers
 
         // Delete User
         [HttpDelete("{id}")]
-        public async Task<ActionResult> DeleteUser(int id)
+        public async Task<ActionResult> DeleteBarang(int id)
         {
-            if (_apotekContext.User == null)
+            if (_apotekContext.Barang == null)
             {
                 return NotFound();
             }
-            var user = await _apotekContext.User.FindAsync(id);
-            if (user == null)
+            var barang = await _apotekContext.Barang.FindAsync(id);
+            if (barang == null)
             {
                 return NotFound();
             }
 
-            _apotekContext.User.Remove(user);
+            _apotekContext.Barang.Remove(barang);
 
             await _apotekContext.SaveChangesAsync();
 
