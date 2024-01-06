@@ -75,7 +75,7 @@ namespace Aplikasi_Apotek.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!BrandAvailable(id))
+                if (!UserAvailable(id))
                 {
                     return NotFound();
                 }
