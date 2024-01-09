@@ -1,9 +1,6 @@
 ﻿using Aplikasi_Apotek.Models;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
@@ -47,15 +44,21 @@ namespace Aplikasi_Apotek.Controllers
         [HttpPost]
         public IActionResult Login([FromBody] UserLoginRequest loginRequest)
         {
+
             IActionResult response = Unauthorized();
+            Log _log = null;
             var user = new User { Username = loginRequest.Username, Password = loginRequest.Password };
             var authenticatedUser = AuthenticateUser(user);
             if (authenticatedUser != null)
             {
-                var token = GenerateToken(authenticatedUser);
-                response = Ok(new { token = token, data = authenticatedUser });
-
+                // Create Log
+                _log = new Log { Waktu = DateTime.Now, Aktivitas = "Login", Id_user = authenticatedUser.Id_user };
+                _apotekContext.Log.Add(_log);
+                _apotekContext.SaveChanges();
                 
+                // Return Token
+                var token = GenerateToken(authenticatedUser);
+                response = Ok(new { token = token, data = authenticatedUser, log = _log });
             }
             return response;
         }

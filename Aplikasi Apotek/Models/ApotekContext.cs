@@ -30,7 +30,7 @@ namespace Aplikasi_Apotek.Models
                         Alamat = "JL Delima 1",
                         Telpon = "081288531636",
                         Username = "lumi07",
-                        Password = null
+                        Password = "Mysql@2023"
                     },
                     new User
                     {
@@ -140,21 +140,21 @@ namespace Aplikasi_Apotek.Models
                     {
                         Id_log = 1,
                         Waktu = DateTime.Now,
-                        Aktivitas = "Barang Terjual",
+                        Aktivitas = "Login",
                         Id_user = 1,
                     },
                     new Log
                     {
                         Id_log = 2,
                         Waktu = DateTime.Now,
-                        Aktivitas = "Barang Terjual",
+                        Aktivitas = "Logout",
                         Id_user  = 1
                     },
                     new Log
                     {
                         Id_log = 3,
                         Waktu = DateTime.Now,
-                        Aktivitas = "Barang Terjual",
+                        Aktivitas = "Login",
                         Id_user = 1
                     }
                 );

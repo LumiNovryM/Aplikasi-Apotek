@@ -62,7 +62,7 @@ namespace Aplikasi_Apotek.Migrations
                         new
                         {
                             Id_barang = 1,
-                            Expired_date = new DateTime(2024, 1, 5, 23, 18, 51, 995, DateTimeKind.Local).AddTicks(8424),
+                            Expired_date = new DateTime(2024, 1, 9, 14, 48, 26, 232, DateTimeKind.Local).AddTicks(7391),
                             Harga_Satuan = 75000L,
                             Jumlah_barang = 100L,
                             Kode_barang = "OBT",
@@ -72,7 +72,7 @@ namespace Aplikasi_Apotek.Migrations
                         new
                         {
                             Id_barang = 2,
-                            Expired_date = new DateTime(2024, 1, 5, 23, 18, 51, 995, DateTimeKind.Local).AddTicks(8453),
+                            Expired_date = new DateTime(2024, 1, 9, 14, 48, 26, 232, DateTimeKind.Local).AddTicks(7429),
                             Harga_Satuan = 5000L,
                             Jumlah_barang = 50L,
                             Kode_barang = "OBT",
@@ -82,7 +82,7 @@ namespace Aplikasi_Apotek.Migrations
                         new
                         {
                             Id_barang = 3,
-                            Expired_date = new DateTime(2024, 1, 5, 23, 18, 51, 995, DateTimeKind.Local).AddTicks(8457),
+                            Expired_date = new DateTime(2024, 1, 9, 14, 48, 26, 232, DateTimeKind.Local).AddTicks(7434),
                             Harga_Satuan = 25000L,
                             Jumlah_barang = 15L,
                             Kode_barang = "OBT",
@@ -120,23 +120,23 @@ namespace Aplikasi_Apotek.Migrations
                         new
                         {
                             Id_log = 1,
-                            Aktivitas = "Barang Terjual",
+                            Aktivitas = "Login",
                             Id_user = 1,
-                            Waktu = new DateTime(2024, 1, 5, 23, 18, 51, 996, DateTimeKind.Local).AddTicks(320)
+                            Waktu = new DateTime(2024, 1, 9, 14, 48, 26, 233, DateTimeKind.Local).AddTicks(2127)
                         },
                         new
                         {
                             Id_log = 2,
-                            Aktivitas = "Barang Terjual",
+                            Aktivitas = "Logout",
                             Id_user = 1,
-                            Waktu = new DateTime(2024, 1, 5, 23, 18, 51, 996, DateTimeKind.Local).AddTicks(326)
+                            Waktu = new DateTime(2024, 1, 9, 14, 48, 26, 233, DateTimeKind.Local).AddTicks(2140)
                         },
                         new
                         {
                             Id_log = 3,
-                            Aktivitas = "Barang Terjual",
+                            Aktivitas = "Login",
                             Id_user = 1,
-                            Waktu = new DateTime(2024, 1, 5, 23, 18, 51, 996, DateTimeKind.Local).AddTicks(328)
+                            Waktu = new DateTime(2024, 1, 9, 14, 48, 26, 233, DateTimeKind.Local).AddTicks(2143)
                         });
                 });
 
@@ -180,7 +180,7 @@ namespace Aplikasi_Apotek.Migrations
                             Id_barang = 3,
                             Id_user = 1,
                             No_transaksi = "001",
-                            Tgl_transaksi = new DateTime(2024, 1, 5, 23, 18, 51, 995, DateTimeKind.Local).AddTicks(9887),
+                            Tgl_transaksi = new DateTime(2024, 1, 9, 14, 48, 26, 233, DateTimeKind.Local).AddTicks(973),
                             Total_bayar = 25000L
                         },
                         new
@@ -189,7 +189,7 @@ namespace Aplikasi_Apotek.Migrations
                             Id_barang = 3,
                             Id_user = 1,
                             No_transaksi = "002",
-                            Tgl_transaksi = new DateTime(2024, 1, 5, 23, 18, 51, 995, DateTimeKind.Local).AddTicks(9898),
+                            Tgl_transaksi = new DateTime(2024, 1, 9, 14, 48, 26, 233, DateTimeKind.Local).AddTicks(1001),
                             Total_bayar = 25000L
                         },
                         new
@@ -198,7 +198,7 @@ namespace Aplikasi_Apotek.Migrations
                             Id_barang = 3,
                             Id_user = 1,
                             No_transaksi = "003",
-                            Tgl_transaksi = new DateTime(2024, 1, 5, 23, 18, 51, 995, DateTimeKind.Local).AddTicks(9901),
+                            Tgl_transaksi = new DateTime(2024, 1, 9, 14, 48, 26, 233, DateTimeKind.Local).AddTicks(1005),
                             Total_bayar = 25000L
                         });
                 });
@@ -250,6 +250,7 @@ namespace Aplikasi_Apotek.Migrations
                             Id_user = 1,
                             Alamat = "JL Delima 1",
                             Nama = "Lumi",
+                            Password = "Mysql@2023",
                             Telpon = "081288531636",
                             Tipe_user = "Admin",
                             Username = "lumi07"
