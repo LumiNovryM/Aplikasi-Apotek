@@ -12,7 +12,7 @@ namespace Aplikasi_Apotek.Models
         public int Id_transaksi { get; set; }
 
         [Required]
-        [StringLength(50)]
+        [Column(TypeName = "varchar(50)")]
         public string No_transaksi { get; set; }
 
         [Required]

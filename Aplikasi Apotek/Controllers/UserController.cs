@@ -1,4 +1,5 @@
 ﻿using Aplikasi_Apotek.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -17,6 +18,7 @@ namespace Aplikasi_Apotek.Controllers
         }
 
         // Get All User Data
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUser()
         {
@@ -28,6 +30,7 @@ namespace Aplikasi_Apotek.Controllers
         }
 
         // Get User Data By Id
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetUserById(int id)
         {
@@ -45,6 +48,7 @@ namespace Aplikasi_Apotek.Controllers
         }
 
         // Create New User
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult<User>> CreateNewUser(User user)
         {
@@ -61,6 +65,7 @@ namespace Aplikasi_Apotek.Controllers
         }
 
         // Edit Existing User
+        [Authorize]
         [HttpPut]
         public async Task<ActionResult> EditUser(int id, User user)
         {
@@ -88,6 +93,7 @@ namespace Aplikasi_Apotek.Controllers
         }
 
         // Delete User
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteUser(int id)
         {

@@ -12,11 +12,11 @@ namespace Aplikasi_Apotek.Models
         public int Id_barang { get; set; }
 
         [Required]
-        [StringLength(50)]
+        [Column(TypeName = "varchar(50)")]
         public string Kode_barang { get; set; }
 
         [Required]
-        [StringLength(50)]
+        [Column(TypeName = "varchar(50)")]
         public string Nama_barang { get; set; }
 
         [Required]
@@ -26,7 +26,7 @@ namespace Aplikasi_Apotek.Models
         public BigInteger Jumlah_barang { get; set; }
 
         [Required]
-        [StringLength(50)]
+        [Column(TypeName = "varchar(50)")]
         public string Satuan { get; set; }
 
         [Required]

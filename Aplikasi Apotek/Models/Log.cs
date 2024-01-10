@@ -14,7 +14,7 @@ namespace Aplikasi_Apotek.Models
         public DateTime Waktu { get; set; }
 
         [Required]
-        [StringLength(50)]
+        [Column(TypeName = "varchar(50)")]
         public string Aktivitas { get; set; }
 
         [Required]

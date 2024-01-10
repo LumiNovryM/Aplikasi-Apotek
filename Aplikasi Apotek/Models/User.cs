@@ -12,26 +12,26 @@ namespace Aplikasi_Apotek.Models
         public int Id_user { get; set; }
 
         [Required]
-        [StringLength(50)]
+        [Column(TypeName = "varchar(50)")]
         public string Tipe_user { get; set; }
 
         [Required]
-        [StringLength(50)]
+        [Column(TypeName = "varchar(50)")]
         public string Nama { get; set; }
 
         [Required]
-        [StringLength(150)]
+        [Column(TypeName = "varchar(50)")]
         public string Alamat { get; set; }
 
         [Required]
-        [StringLength(50)]
+        [Column(TypeName = "varchar(50)")]
         public string Telpon { get; set; }
 
         [Required]
-        [StringLength(50)]
+        [Column(TypeName = "varchar(50)")]
         public string Username { get; set; }
 
-        [StringLength(50)]
+        [Column(TypeName = "varchar(50)")]
         public string? Password { get; set; } = null;
     }
 }

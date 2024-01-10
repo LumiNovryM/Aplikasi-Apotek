@@ -41,7 +41,7 @@ namespace Aplikasi_Apotek.Controllers
         }
 
         [AllowAnonymous]
-        [HttpPost]
+        [HttpPost("Login")]
         public IActionResult Login([FromBody] UserLoginRequest loginRequest)
         {
 
@@ -61,6 +61,13 @@ namespace Aplikasi_Apotek.Controllers
                 response = Ok(new { token = token, data = authenticatedUser, log = _log });
             }
             return response;
+        }
+
+        [Authorize]
+        [HttpPost("Logout")]
+        public async Task<IActionResult> Logout()
+        {
+            return Ok(new { message = "Logout Successfully" });
         }
     }
 }
