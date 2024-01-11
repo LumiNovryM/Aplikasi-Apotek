@@ -54,7 +54,7 @@ namespace Aplikasi_Apotek.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(50)");
 
-                    b.Property<DateTime>("UpdatedAt")
+                    b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id_barang");
@@ -65,38 +65,35 @@ namespace Aplikasi_Apotek.Migrations
                         new
                         {
                             Id_barang = 1,
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Expired_date = new DateTime(2024, 1, 11, 13, 57, 2, 808, DateTimeKind.Local).AddTicks(1862),
+                            CreatedAt = new DateTime(2024, 1, 11, 14, 15, 43, 447, DateTimeKind.Local).AddTicks(3412),
+                            Expired_date = new DateTime(2024, 1, 11, 14, 15, 43, 447, DateTimeKind.Local).AddTicks(3398),
                             Harga_Satuan = 75000L,
                             Jumlah_barang = 100L,
                             Kode_barang = "OBT",
                             Nama_barang = "Obat Tidur",
-                            Satuan = "Pcs",
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Satuan = "Pcs"
                         },
                         new
                         {
                             Id_barang = 2,
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Expired_date = new DateTime(2024, 1, 11, 13, 57, 2, 808, DateTimeKind.Local).AddTicks(1891),
+                            CreatedAt = new DateTime(2024, 1, 11, 14, 15, 43, 447, DateTimeKind.Local).AddTicks(3417),
+                            Expired_date = new DateTime(2024, 1, 11, 14, 15, 43, 447, DateTimeKind.Local).AddTicks(3415),
                             Harga_Satuan = 5000L,
                             Jumlah_barang = 50L,
                             Kode_barang = "OBT",
                             Nama_barang = "Obat Maag",
-                            Satuan = "Pcs",
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Satuan = "Pcs"
                         },
                         new
                         {
                             Id_barang = 3,
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Expired_date = new DateTime(2024, 1, 11, 13, 57, 2, 808, DateTimeKind.Local).AddTicks(1895),
+                            CreatedAt = new DateTime(2024, 1, 11, 14, 15, 43, 447, DateTimeKind.Local).AddTicks(3421),
+                            Expired_date = new DateTime(2024, 1, 11, 14, 15, 43, 447, DateTimeKind.Local).AddTicks(3419),
                             Harga_Satuan = 25000L,
                             Jumlah_barang = 15L,
                             Kode_barang = "OBT",
                             Nama_barang = "Obat Pilek",
-                            Satuan = "Pcs",
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Satuan = "Pcs"
                         });
                 });
 
@@ -118,7 +115,7 @@ namespace Aplikasi_Apotek.Migrations
                     b.Property<int>("Id_user")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("UpdatedAt")
+                    b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("Waktu")
@@ -135,28 +132,25 @@ namespace Aplikasi_Apotek.Migrations
                         {
                             Id_log = 1,
                             Aktivitas = "Login",
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2024, 1, 11, 14, 15, 43, 447, DateTimeKind.Local).AddTicks(5173),
                             Id_user = 1,
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Waktu = new DateTime(2024, 1, 11, 13, 57, 2, 808, DateTimeKind.Local).AddTicks(4146)
+                            Waktu = new DateTime(2024, 1, 11, 14, 15, 43, 447, DateTimeKind.Local).AddTicks(5163)
                         },
                         new
                         {
                             Id_log = 2,
                             Aktivitas = "Logout",
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2024, 1, 11, 14, 15, 43, 447, DateTimeKind.Local).AddTicks(5179),
                             Id_user = 1,
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Waktu = new DateTime(2024, 1, 11, 13, 57, 2, 808, DateTimeKind.Local).AddTicks(4154)
+                            Waktu = new DateTime(2024, 1, 11, 14, 15, 43, 447, DateTimeKind.Local).AddTicks(5177)
                         },
                         new
                         {
                             Id_log = 3,
                             Aktivitas = "Login",
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2024, 1, 11, 14, 15, 43, 447, DateTimeKind.Local).AddTicks(5182),
                             Id_user = 1,
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Waktu = new DateTime(2024, 1, 11, 13, 57, 2, 808, DateTimeKind.Local).AddTicks(4156)
+                            Waktu = new DateTime(2024, 1, 11, 14, 15, 43, 447, DateTimeKind.Local).AddTicks(5181)
                         });
                 });
 
@@ -187,7 +181,7 @@ namespace Aplikasi_Apotek.Migrations
                     b.Property<long>("Total_bayar")
                         .HasColumnType("bigint");
 
-                    b.Property<DateTime>("UpdatedAt")
+                    b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id_transaksi");
@@ -202,35 +196,32 @@ namespace Aplikasi_Apotek.Migrations
                         new
                         {
                             Id_transaksi = 1,
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2024, 1, 11, 14, 15, 43, 447, DateTimeKind.Local).AddTicks(4588),
                             Id_barang = 3,
                             Id_user = 1,
                             No_transaksi = "001",
-                            Tgl_transaksi = new DateTime(2024, 1, 11, 13, 57, 2, 808, DateTimeKind.Local).AddTicks(3549),
-                            Total_bayar = 25000L,
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Tgl_transaksi = new DateTime(2024, 1, 11, 14, 15, 43, 447, DateTimeKind.Local).AddTicks(4578),
+                            Total_bayar = 25000L
                         },
                         new
                         {
                             Id_transaksi = 2,
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2024, 1, 11, 14, 15, 43, 447, DateTimeKind.Local).AddTicks(4594),
                             Id_barang = 3,
                             Id_user = 1,
                             No_transaksi = "002",
-                            Tgl_transaksi = new DateTime(2024, 1, 11, 13, 57, 2, 808, DateTimeKind.Local).AddTicks(3561),
-                            Total_bayar = 25000L,
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Tgl_transaksi = new DateTime(2024, 1, 11, 14, 15, 43, 447, DateTimeKind.Local).AddTicks(4591),
+                            Total_bayar = 25000L
                         },
                         new
                         {
                             Id_transaksi = 3,
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2024, 1, 11, 14, 15, 43, 447, DateTimeKind.Local).AddTicks(4597),
                             Id_barang = 3,
                             Id_user = 1,
                             No_transaksi = "003",
-                            Tgl_transaksi = new DateTime(2024, 1, 11, 13, 57, 2, 808, DateTimeKind.Local).AddTicks(3564),
-                            Total_bayar = 25000L,
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Tgl_transaksi = new DateTime(2024, 1, 11, 14, 15, 43, 447, DateTimeKind.Local).AddTicks(4596),
+                            Total_bayar = 25000L
                         });
                 });
 
@@ -264,7 +255,7 @@ namespace Aplikasi_Apotek.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(50)");
 
-                    b.Property<DateTime>("UpdatedAt")
+                    b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Username")
@@ -280,34 +271,31 @@ namespace Aplikasi_Apotek.Migrations
                         {
                             Id_user = 1,
                             Alamat = "JL Delima 1",
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2024, 1, 11, 14, 15, 43, 447, DateTimeKind.Local).AddTicks(3038),
                             Nama = "Lumi",
                             Password = "Mysql@2023",
                             Telpon = "081288531636",
                             Tipe_user = "Admin",
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Username = "lumi07"
                         },
                         new
                         {
                             Id_user = 2,
                             Alamat = "JL Mangga 1",
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2024, 1, 11, 14, 15, 43, 447, DateTimeKind.Local).AddTicks(3058),
                             Nama = "Novry",
                             Telpon = "081244542479",
                             Tipe_user = "Kasir",
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Username = "novry11"
                         },
                         new
                         {
                             Id_user = 3,
                             Alamat = "JL Apel 1",
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2024, 1, 11, 14, 15, 43, 447, DateTimeKind.Local).AddTicks(3061),
                             Nama = "Mekel",
                             Telpon = "089524790987",
                             Tipe_user = "Kasir",
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Username = "mekel2005"
                         });
                 });

@@ -35,7 +35,6 @@ namespace Aplikasi_Apotek.Models
         [Required]
         public DateTime CreatedAt { get; set; }
 
-        [Required]
-        public DateTime UpdatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
     }
 }

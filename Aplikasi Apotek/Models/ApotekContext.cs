@@ -30,7 +30,9 @@ namespace Aplikasi_Apotek.Models
                         Alamat = "JL Delima 1",
                         Telpon = "081288531636",
                         Username = "lumi07",
-                        Password = "Mysql@2023"
+                        Password = "Mysql@2023",
+                        CreatedAt = DateTime.Now,
+                        UpdatedAt = null,
                     },
                     new User
                     {
@@ -40,7 +42,9 @@ namespace Aplikasi_Apotek.Models
                         Alamat = "JL Mangga 1",
                         Telpon = "081244542479",
                         Username = "novry11",
-                        Password = null
+                        Password = null,
+                        CreatedAt = DateTime.Now,
+                        UpdatedAt = null,
                     },
                     new User
                     {
@@ -50,7 +54,9 @@ namespace Aplikasi_Apotek.Models
                         Alamat = "JL Apel 1",
                         Telpon = "089524790987",
                         Username = "mekel2005",
-                        Password = null
+                        Password = null,
+                        CreatedAt = DateTime.Now,
+                        UpdatedAt = null,
                     }
                 );
 
@@ -66,6 +72,8 @@ namespace Aplikasi_Apotek.Models
                         Jumlah_barang = 100,
                         Satuan = "Pcs",
                         Harga_Satuan = 75000,
+                        CreatedAt = DateTime.Now,
+                        UpdatedAt = null,
                     },
                     new Barang
                     {
@@ -76,6 +84,8 @@ namespace Aplikasi_Apotek.Models
                         Jumlah_barang = 50,
                         Satuan = "Pcs",
                         Harga_Satuan = 5000,
+                        CreatedAt = DateTime.Now,
+                        UpdatedAt = null,
                     },
                     new Barang
                     {
@@ -86,6 +96,8 @@ namespace Aplikasi_Apotek.Models
                         Jumlah_barang = 15,
                         Satuan = "Pcs",
                         Harga_Satuan = 25000,
+                        CreatedAt = DateTime.Now,
+                        UpdatedAt = null,
                     }
                 );
 
@@ -108,6 +120,8 @@ namespace Aplikasi_Apotek.Models
                         Total_bayar = 25000,
                         Id_user = 1,
                         Id_barang = 3,
+                        CreatedAt = DateTime.Now,
+                        UpdatedAt = null,
                     },
                     new Transaksi
                     {
@@ -117,6 +131,8 @@ namespace Aplikasi_Apotek.Models
                         Total_bayar = 25000,
                         Id_user = 1,
                         Id_barang = 3,
+                        CreatedAt = DateTime.Now,
+                        UpdatedAt = null,
                     },
                     new Transaksi
                     {
@@ -126,6 +142,8 @@ namespace Aplikasi_Apotek.Models
                         Total_bayar = 25000,
                         Id_user = 1,
                         Id_barang = 3,
+                        CreatedAt = DateTime.Now,
+                        UpdatedAt = null,
                     }
                 );
 
@@ -142,20 +160,26 @@ namespace Aplikasi_Apotek.Models
                         Waktu = DateTime.Now,
                         Aktivitas = "Login",
                         Id_user = 1,
+                        CreatedAt = DateTime.Now,
+                        UpdatedAt = null,
                     },
                     new Log
                     {
                         Id_log = 2,
                         Waktu = DateTime.Now,
                         Aktivitas = "Logout",
-                        Id_user  = 1
+                        Id_user  = 1,
+                        CreatedAt = DateTime.Now,
+                        UpdatedAt = null
                     },
                     new Log
                     {
                         Id_log = 3,
                         Waktu = DateTime.Now,
                         Aktivitas = "Login",
-                        Id_user = 1
+                        Id_user = 1,
+                        CreatedAt = DateTime.Now,
+                        UpdatedAt = null,
                     }
                 );
 
