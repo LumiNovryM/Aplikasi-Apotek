@@ -33,5 +33,11 @@ namespace Aplikasi_Apotek.Models
 
         [Column(TypeName = "varchar(50)")]
         public string? Password { get; set; } = null;
+
+        [Required]
+        public DateTime CreatedAt { get; set; }
+
+        [Required]
+        public DateTime UpdatedAt { get; set; }
     }
 }

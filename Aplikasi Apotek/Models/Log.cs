@@ -21,5 +21,11 @@ namespace Aplikasi_Apotek.Models
         public int Id_user { get; set; }
         [ForeignKey("Id_user")]
         public virtual User Users { get; set; }
+
+        [Required]
+        public DateTime CreatedAt { get; set; }
+
+        [Required]
+        public DateTime UpdatedAt { get; set; }
     }
 }

@@ -62,12 +62,5 @@ namespace Aplikasi_Apotek.Controllers
             }
             return response;
         }
-
-        [Authorize]
-        [HttpPost("Logout")]
-        public async Task<IActionResult> Logout()
-        {
-            return Ok(new { message = "Logout Successfully" });
-        }
     }
 }

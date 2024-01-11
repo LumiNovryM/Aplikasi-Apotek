@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Aplikasi_Apotek.Migrations
 {
     [DbContext(typeof(ApotekContext))]
-    [Migration("20240109074828_Initial")]
-    partial class Initial
+    [Migration("20240111065705_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,6 +33,9 @@ namespace Aplikasi_Apotek.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id_barang"));
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateTime>("Expired_date")
                         .HasColumnType("datetime2");
 
@@ -44,18 +47,18 @@ namespace Aplikasi_Apotek.Migrations
 
                     b.Property<string>("Kode_barang")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("varchar(50)");
 
                     b.Property<string>("Nama_barang")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("varchar(50)");
 
                     b.Property<string>("Satuan")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id_barang");
 
@@ -65,32 +68,38 @@ namespace Aplikasi_Apotek.Migrations
                         new
                         {
                             Id_barang = 1,
-                            Expired_date = new DateTime(2024, 1, 9, 14, 48, 26, 232, DateTimeKind.Local).AddTicks(7391),
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Expired_date = new DateTime(2024, 1, 11, 13, 57, 2, 808, DateTimeKind.Local).AddTicks(1862),
                             Harga_Satuan = 75000L,
                             Jumlah_barang = 100L,
                             Kode_barang = "OBT",
                             Nama_barang = "Obat Tidur",
-                            Satuan = "Pcs"
+                            Satuan = "Pcs",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id_barang = 2,
-                            Expired_date = new DateTime(2024, 1, 9, 14, 48, 26, 232, DateTimeKind.Local).AddTicks(7429),
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Expired_date = new DateTime(2024, 1, 11, 13, 57, 2, 808, DateTimeKind.Local).AddTicks(1891),
                             Harga_Satuan = 5000L,
                             Jumlah_barang = 50L,
                             Kode_barang = "OBT",
                             Nama_barang = "Obat Maag",
-                            Satuan = "Pcs"
+                            Satuan = "Pcs",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id_barang = 3,
-                            Expired_date = new DateTime(2024, 1, 9, 14, 48, 26, 232, DateTimeKind.Local).AddTicks(7434),
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Expired_date = new DateTime(2024, 1, 11, 13, 57, 2, 808, DateTimeKind.Local).AddTicks(1895),
                             Harga_Satuan = 25000L,
                             Jumlah_barang = 15L,
                             Kode_barang = "OBT",
                             Nama_barang = "Obat Pilek",
-                            Satuan = "Pcs"
+                            Satuan = "Pcs",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 
@@ -104,11 +113,16 @@ namespace Aplikasi_Apotek.Migrations
 
                     b.Property<string>("Aktivitas")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("Id_user")
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime>("Waktu")
                         .HasColumnType("datetime2");
@@ -124,22 +138,28 @@ namespace Aplikasi_Apotek.Migrations
                         {
                             Id_log = 1,
                             Aktivitas = "Login",
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Id_user = 1,
-                            Waktu = new DateTime(2024, 1, 9, 14, 48, 26, 233, DateTimeKind.Local).AddTicks(2127)
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Waktu = new DateTime(2024, 1, 11, 13, 57, 2, 808, DateTimeKind.Local).AddTicks(4146)
                         },
                         new
                         {
                             Id_log = 2,
                             Aktivitas = "Logout",
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Id_user = 1,
-                            Waktu = new DateTime(2024, 1, 9, 14, 48, 26, 233, DateTimeKind.Local).AddTicks(2140)
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Waktu = new DateTime(2024, 1, 11, 13, 57, 2, 808, DateTimeKind.Local).AddTicks(4154)
                         },
                         new
                         {
                             Id_log = 3,
                             Aktivitas = "Login",
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Id_user = 1,
-                            Waktu = new DateTime(2024, 1, 9, 14, 48, 26, 233, DateTimeKind.Local).AddTicks(2143)
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Waktu = new DateTime(2024, 1, 11, 13, 57, 2, 808, DateTimeKind.Local).AddTicks(4156)
                         });
                 });
 
@@ -151,6 +171,9 @@ namespace Aplikasi_Apotek.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id_transaksi"));
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("Id_barang")
                         .HasColumnType("int");
 
@@ -159,14 +182,16 @@ namespace Aplikasi_Apotek.Migrations
 
                     b.Property<string>("No_transaksi")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("varchar(50)");
 
                     b.Property<DateTime>("Tgl_transaksi")
                         .HasColumnType("datetime2");
 
                     b.Property<long>("Total_bayar")
                         .HasColumnType("bigint");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id_transaksi");
 
@@ -180,29 +205,35 @@ namespace Aplikasi_Apotek.Migrations
                         new
                         {
                             Id_transaksi = 1,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Id_barang = 3,
                             Id_user = 1,
                             No_transaksi = "001",
-                            Tgl_transaksi = new DateTime(2024, 1, 9, 14, 48, 26, 233, DateTimeKind.Local).AddTicks(973),
-                            Total_bayar = 25000L
+                            Tgl_transaksi = new DateTime(2024, 1, 11, 13, 57, 2, 808, DateTimeKind.Local).AddTicks(3549),
+                            Total_bayar = 25000L,
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id_transaksi = 2,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Id_barang = 3,
                             Id_user = 1,
                             No_transaksi = "002",
-                            Tgl_transaksi = new DateTime(2024, 1, 9, 14, 48, 26, 233, DateTimeKind.Local).AddTicks(1001),
-                            Total_bayar = 25000L
+                            Tgl_transaksi = new DateTime(2024, 1, 11, 13, 57, 2, 808, DateTimeKind.Local).AddTicks(3561),
+                            Total_bayar = 25000L,
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id_transaksi = 3,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Id_barang = 3,
                             Id_user = 1,
                             No_transaksi = "003",
-                            Tgl_transaksi = new DateTime(2024, 1, 9, 14, 48, 26, 233, DateTimeKind.Local).AddTicks(1005),
-                            Total_bayar = 25000L
+                            Tgl_transaksi = new DateTime(2024, 1, 11, 13, 57, 2, 808, DateTimeKind.Local).AddTicks(3564),
+                            Total_bayar = 25000L,
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 
@@ -216,32 +247,32 @@ namespace Aplikasi_Apotek.Migrations
 
                     b.Property<string>("Alamat")
                         .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Nama")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("varchar(50)");
 
                     b.Property<string>("Password")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("varchar(50)");
 
                     b.Property<string>("Telpon")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("varchar(50)");
 
                     b.Property<string>("Tipe_user")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Username")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("varchar(50)");
 
                     b.HasKey("Id_user");
 
@@ -252,28 +283,34 @@ namespace Aplikasi_Apotek.Migrations
                         {
                             Id_user = 1,
                             Alamat = "JL Delima 1",
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Nama = "Lumi",
                             Password = "Mysql@2023",
                             Telpon = "081288531636",
                             Tipe_user = "Admin",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Username = "lumi07"
                         },
                         new
                         {
                             Id_user = 2,
                             Alamat = "JL Mangga 1",
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Nama = "Novry",
                             Telpon = "081244542479",
                             Tipe_user = "Kasir",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Username = "novry11"
                         },
                         new
                         {
                             Id_user = 3,
                             Alamat = "JL Apel 1",
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Nama = "Mekel",
                             Telpon = "089524790987",
                             Tipe_user = "Kasir",
+                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Username = "mekel2005"
                         });
                 });
